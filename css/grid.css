@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.container-row {
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+  flex-wrap: wrap;
+}
+
+
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
+  margin-left: 15px;
+  margin-right: 15px;
+  align-self: flex-start;
+}
+
+
+.grid-1 {
+  flex: 0 0 calc(8.333% - 30px);
+  max-width: 0 0 calc(8.333% - 30px);
+}
+
+.grid-2 {
+  flex: 0 0 calc(16.666% - 30px);
+  max-width: 0 0 calc(16.666% - 30px);
+}
+
+.grid-3 {
+  flex: 0 0 calc(25% - 30px);
+  max-width: 0 0 calc(25% - 30px);
+}
+
+.grid-4 {
+  flex: 0 0 calc(33.333% - 30px);
+  max-width: 0 0 calc(33.333% - 30px);
+}
+
+.grid-5 {
+  flex: 0 0 calc(41.666% - 30px);
+  max-width: 0 0 calc(41.666% - 30px);
+}
+
+.grid-6 {
+  flex: 0 0 calc(50% - 30px);
+  max-width: 0 0 calc(50% - 30px);
+}
+
+.grid-7 {
+  flex: 0 0 calc(58.333% - 30px);
+  max-width: 0 0 calc(58.333% - 30px);
+}
+
+.grid-8 {
+  flex: 0 0 calc(66.666% - 30px);
+  max-width: 0 0 calc(66.666% - 30px);
+}
+
+.grid-9 {
+  flex: 0 0 calc(75% - 30px);
+  max-width: 0 0 calc(75% - 30px);
+}
+
+.grid-10 {
+  flex: 0 0 calc(83.333% - 30px);
+  max-width: 0 0 calc(83.333% - 30px);
+}
+
+.grid-11 {
+  flex: 0 0 calc(91.666% - 30px);
+  max-width: 0 0 calc(91.666% - 30px);
+}
+
+.grid-12 {
+  flex: 0 0 calc(100% - 30px);
+  max-width: 0 0 calc(100% - 30px);
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    
+.container {
+ width: 992px; 
+}
+    
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .container {
+        width: 770px;
+    }
+    
+}
+
+
+
+@media (max-width:767px) {
+	.container {
+		flex-direction: column;
+		max-width: 350px;  
+	}
+  
+  
+  .container-row {
+  flex-direction: column;
+  max-width: 350px; 
+}
+  
+  
+  .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
+  margin-left: 0px;
+  margin-right: 0px;
+  align-self: flex-start;
+  width: 100%;
+}
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
