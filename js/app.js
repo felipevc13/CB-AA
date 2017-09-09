@@ -22,7 +22,7 @@ $(document).ready(function(){
 });   
     
     
- $('.nav-menu a').click(function(e){
+ $('.site-nav a').click(function(e){
    e.preventDefault();    
    var id = $(this).attr('href'),
        menuHeight = $('.menu').height(),
@@ -32,7 +32,13 @@ $(document).ready(function(){
          scrollTop: targetOffset - menuHeight
      }, 500);
      
- });   
+ }); 
+  
+  
+  $('.mobile-btn').click(function(){
+    $(this).toggleClass('active');
+    $('.site-nav').toggleClass('site-nav-open');
+  });
     
     
     

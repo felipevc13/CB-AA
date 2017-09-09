@@ -2,6 +2,7 @@
 
 body {
   background-color: #F7F7FC;
+  overflow-x: hidden;
 }
 
 a {
@@ -61,62 +62,73 @@ h2 {
 box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);    
 }
 
-.no-wrap {
-  flex-wrap: nowrap;
+.clear-fix {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* Menu */
 
 
 .menu {
+  width: 100%;
+  position: fixed;
+  height: 91px;
+  z-index: 100;
+  top: 0;
+  background: #F7F7FC;
+}
+
+.container-menu {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+
+.logo{
+    width: 140px;
+    height: 140px;
     background: #F7F7FC;
-    height: 91px;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    top: 0;
-}
-
-.menu nav ul {
-    display: flex;
-   
-}
-
-.contato-menu {
-    display: flex;
-    margin-top: 40px;
-    float: right;
+    border-bottom-left-radius: 10%;
+    float: left;
+    position: absolute;
 }
 
 
-.contato-menu a {
-    margin: 0 10px;
-    float: right;
-    width: 30px;
-    height: 30px;
+.logotipo img {
+   margin: 15px ;
 }
 
 
-.contato-menu svg:hover path {
-    fill: #B5A26C
+.site-nav {
+  position: absolute;
+  background: #F7F7FC;
+  top: 91px;
+  right: 0;
+  height: 0px;
+  overflow: hidden;
 }
 
 
-.nav-menu{
- float: right; 
- margin-top: 40px;
+.site-nav-open {
+  height:auto;
 }
 
 
-.nav-menu a {
- margin: 0 20px;  
+.site-nav a {  
  color: #252525;
  font-family: roboto;
  font-size: 1em;
- position: relative;   
+ position: relative;
+ text-decoration: none;
+ display: block;
+ padding: 10px 20px;
+ margin: 20px 30px;
+ text-align: center;
 }
 
-.nav-menu a:after {
+.site-nav a::after {
   content: "";
   display: block;
   position: absolute;
@@ -129,7 +141,7 @@ box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
 }
 
 
-.nav-menu a:hover {
+.site-nav a:hover {
  
  color: #B5A26C;
  font-weight: bold;
@@ -137,23 +149,132 @@ box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
 
 }
 
-.nav-menu a:hover::after {
+.site-nav a:hover::after {
     width: 100%;
 }
 
+.contato-menu li {
+  display: inline-block;
+}
 
-
-
-.fundo-logotipo {
-    width: 150px;
-    background: #F7F7FC;
-    border-bottom-left-radius: 10%;
+.contato-menu li a {
+  margin: 0;
+  width: 10px;
+  height: 10px;
 }
 
 
-.logotipo img {
-   margin: 0 auto; 
+.contato-menu a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.2s;
 }
+
+.contato-menu {
+  margin: 20px 20px 30px 20px;
+}
+
+.contato-menu svg:hover path {
+    fill: #B5A26C
+}
+
+/* botão hamburguer */
+
+.mobile-btn {
+  display: block;
+  color: #102E50;
+  width: 36px;
+  height: 36px;
+  margin: 30px 20px 0 0;
+  border-top: 4px solid;
+  float: right;
+  position: relative;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+}
+
+
+.mobile-btn::after, .mobile-btn::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: currentcolor;
+  z-index: 1010;
+  position: relative;
+  transition: transform .2s ease;
+  margin-top: 6px;
+} 
+
+
+.mobile-btn.active {
+  border-top: transparent;
+}
+
+.mobile-btn.active::after {
+  margin-top: 0px;
+  top: 2px;
+  transform: rotate(45deg);
+}
+
+.mobile-btn.active::before {
+  margin-top: 0px;
+  top: 6px;
+  transform: rotate(135deg);
+}
+
+
+.menu-toggle {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+
+@media only screen and (min-width: 990px) {
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    top: auto;
+    margin-top: 11px;
+    
+  }
+  
+  .site-nav li {
+    display: inline-block;
+    padding: 0;
+  }
+  
+  .site-nav a {
+    padding:0;
+    margin: 0 15px;
+  }
+  
+  .contato-menu li {
+    padding: 20px
+  }
+  
+  .contato-menu {
+    margin: 0px; 
+  }
+
+
+}
+
+
+
 
 /*-------------------------------------------------------------*/
 /*-------------------------------------------------------------*/
@@ -173,13 +294,24 @@ box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
 
 @media (max-width:767px) { 
 
-  .menu {
-   
-    position: relative;
-    
+
+
+
+.logotipo img {
+    width: 70px;
+    margin-top: 8px;  
 }
   
   
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  
+  
+    
+ 
 }
 
 /*-------------------------------------------------------------*/
@@ -607,6 +739,12 @@ margin-right: 10px;
         margin: 0px;
         flex: 1; 
     }
+  
+  
+  
+   .flex {
+  flex-direction: column;
+  }
 
     
     
@@ -757,7 +895,7 @@ margin-right: 10px;
    .blocoTextoDireita {
 
  border-left: none;
-       margin-top: 20px;
+ margin-top: 20px;
 } 
 
 
@@ -811,7 +949,10 @@ margin-right: 10px;
           
     }
     
-
+   
+    
+    
+    
 }
 
 
@@ -873,16 +1014,19 @@ padding: 40px;
 }
 
 
-@media (max-width:767px) { 
-
-  .flex {
-    flex-direction: column;
-    flex: 1;
-  }
   
 
 
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
